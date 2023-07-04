@@ -45,6 +45,15 @@ html, body {
     border-color: burlywood;
 }
 
+/* canvas */
+#icon {
+    padding-top: 25px;
+}
+
+#icon canvas {
+    outline: burlywood 3px solid;
+}
+
 /* title heading box */
 #title {
     width: fit-content;
@@ -69,11 +78,6 @@ html, body {
 #subtitle > p {
     font-size: 18px;
     letter-spacing: 2px;
-}
-
-/* input box */
-#input {
- 
 }
 
 /* nav bar box */
