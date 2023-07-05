@@ -6,7 +6,7 @@ class Iteti {
     defaults = {
         background: [240, 240, 240, 255],
         margin: 0.08,
-        size: 64,
+        size: 64
     };
 
     // assume a 15-digit hash to start with 
@@ -28,14 +28,18 @@ class Iteti {
 
         ctx.fillStyle = "rgb(120, 120, 40)";
 
-        for (var i = 0; i < 15; i++) {
+        for (var i = 0; i < squareCountRow * 3; i++) {
 
-            if (i < 5) {
+            if (i < squareCountRow) {
                 ctx.fillRect((width - unitWidth) / 2, unitWidth * i, unitWidth, unitWidth);
-            } else if (i < 10) {
-
-            } else if (i < 15) {
-
+            } else if (i < squareCountRow * 2) {
+                ctx.fillStyle = "rgb(240, 120, 40)";
+                ctx.fillRect((width - unitWidth) / 2 + unitWidth,  unitWidth * (i - squareCountRow), unitWidth, unitWidth);
+                ctx.fillRect((width - unitWidth) / 2 - unitWidth,  unitWidth * (i - squareCountRow), unitWidth, unitWidth);
+            } else if (i < squareCountRow * 3) {
+                ctx.fillStyle = "rgb(120, 240, 40)";
+                ctx.fillRect((width - unitWidth) / 2 + 2 * unitWidth,  unitWidth * (i - 2 * squareCountRow), unitWidth, unitWidth);
+                ctx.fillRect((width - unitWidth) / 2 - 2 * unitWidth,  unitWidth * (i - 2 * squareCountRow), unitWidth, unitWidth);
             }   
             
         }
