@@ -6,11 +6,16 @@ const width = canvas.width;
 const height = canvas.height;
 const ctx = canvas.getContext("2d");
 
-var iteti = new Iteti("", {});
+var iteti = new Iteti(hash("heeheeheeheehee"), {});
 iteti.render(ctx, canvas);
 
-document.addEventListener("keydown", (e) => {
+document.addEventListener("keyup", (e) => {
     var text = document.getElementById("input-box").value;
-    iteti.hash = text;
-    iteti.render(ctx, canvas);
+    if (text == '') {
+        iteti.hash = hash("heeheeheeheehee");
+        iteti.render(ctx, canvas);
+    } else { 
+        iteti.hash = hash(text);
+        iteti.render(ctx, canvas);
+    }
 });

@@ -28,9 +28,7 @@ class Iteti {
         ctx.fillStyle = "rgb(255, 255, 255)";
         ctx.fillRect(0, 0, width, height);
 
-        ctx.fillStyle = "rgb(120, 120, 40)";
-
-
+        ctx.fillStyle = "rgb(0, 0, 0)";
 
         for (var i = 0; i < squareCountRow * 3; i++) {
 
@@ -39,15 +37,13 @@ class Iteti {
             if (check) {
 
                 if (i < squareCountRow) {
-                    ctx.fillRect((width - unitWidth) / 2, unitWidth * i, unitWidth, unitWidth);
+                    ctx.fillRect((width - unitWidth) / 2, unitWidth * i, unitWidth + 0.5, unitWidth + 0.5);
                 } else if (i < squareCountRow * 2) {
-                    ctx.fillStyle = "rgb(240, 120, 40)";
-                    ctx.fillRect((width - unitWidth) / 2 + unitWidth,  unitWidth * (i - squareCountRow), unitWidth, unitWidth);
-                    ctx.fillRect((width - unitWidth) / 2 - unitWidth,  unitWidth * (i - squareCountRow), unitWidth, unitWidth);
+                    ctx.fillRect((width - unitWidth) / 2 + unitWidth,  unitWidth * (i - squareCountRow), unitWidth + 0.5, unitWidth + 0.5);
+                    ctx.fillRect((width - unitWidth) / 2 - unitWidth,  unitWidth * (i - squareCountRow), unitWidth + 0.5, unitWidth + 0.5);
                 } else if (i < squareCountRow * 3) {
-                    ctx.fillStyle = "rgb(120, 240, 40)";
-                    ctx.fillRect((width - unitWidth) / 2 + 2 * unitWidth,  unitWidth * (i - 2 * squareCountRow), unitWidth, unitWidth);
-                    ctx.fillRect((width - unitWidth) / 2 - 2 * unitWidth,  unitWidth * (i - 2 * squareCountRow), unitWidth, unitWidth);
+                    ctx.fillRect((width - unitWidth) / 2 + 2 * unitWidth,  unitWidth * (i - 2 * squareCountRow), unitWidth + 0.5, unitWidth + 0.5);
+                    ctx.fillRect((width - unitWidth) / 2 - 2 * unitWidth,  unitWidth * (i - 2 * squareCountRow), unitWidth + 0.5, unitWidth + 0.5);
                 }   
 
             }
