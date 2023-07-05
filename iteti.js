@@ -6,7 +6,7 @@ class Iteti {
     defaults = {
         background: [240, 240, 240, 255],
         margin: 0.08,
-        size: 64
+        size: 81
     };
 
     constructor(hash, options) {
@@ -24,8 +24,13 @@ class Iteti {
         var width = canvas.width;
         var squareCountRow = Math.sqrt(this.size);
         var unitWidth = width / squareCountRow;
+        
+        ctx.fillStyle = "rgb(255, 255, 255)";
+        ctx.fillRect(0, 0, width, height);
 
         ctx.fillStyle = "rgb(120, 120, 40)";
+
+
 
         for (var i = 0; i < squareCountRow * 3; i++) {
 
@@ -44,7 +49,7 @@ class Iteti {
                     ctx.fillRect((width - unitWidth) / 2 + 2 * unitWidth,  unitWidth * (i - 2 * squareCountRow), unitWidth, unitWidth);
                     ctx.fillRect((width - unitWidth) / 2 - 2 * unitWidth,  unitWidth * (i - 2 * squareCountRow), unitWidth, unitWidth);
                 }   
-                
+
             }
             
         }

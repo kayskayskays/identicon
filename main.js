@@ -6,8 +6,11 @@ const width = canvas.width;
 const height = canvas.height;
 const ctx = canvas.getContext("2d");
 
-ctx.fillStyle = "rgb(255, 255, 255)";
-ctx.fillRect(0, 0, width, height);
-
-var iteti = new Iteti("236719438941839336449826", {});
+var iteti = new Iteti("", {});
 iteti.render(ctx, canvas);
+
+document.addEventListener("keydown", (e) => {
+    var text = document.getElementById("input-box").value;
+    iteti.hash = text;
+    iteti.render(ctx, canvas);
+});
