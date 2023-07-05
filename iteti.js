@@ -9,7 +9,6 @@ class Iteti {
         size: 64
     };
 
-    // assume a 15-digit hash to start with 
     constructor(hash, options) {
 
         this.hash = hash;
@@ -30,17 +29,23 @@ class Iteti {
 
         for (var i = 0; i < squareCountRow * 3; i++) {
 
-            if (i < squareCountRow) {
-                ctx.fillRect((width - unitWidth) / 2, unitWidth * i, unitWidth, unitWidth);
-            } else if (i < squareCountRow * 2) {
-                ctx.fillStyle = "rgb(240, 120, 40)";
-                ctx.fillRect((width - unitWidth) / 2 + unitWidth,  unitWidth * (i - squareCountRow), unitWidth, unitWidth);
-                ctx.fillRect((width - unitWidth) / 2 - unitWidth,  unitWidth * (i - squareCountRow), unitWidth, unitWidth);
-            } else if (i < squareCountRow * 3) {
-                ctx.fillStyle = "rgb(120, 240, 40)";
-                ctx.fillRect((width - unitWidth) / 2 + 2 * unitWidth,  unitWidth * (i - 2 * squareCountRow), unitWidth, unitWidth);
-                ctx.fillRect((width - unitWidth) / 2 - 2 * unitWidth,  unitWidth * (i - 2 * squareCountRow), unitWidth, unitWidth);
-            }   
+            var check = (parseInt(this.hash.charAt(i), 10) % 2) ? 0 : 1;
+
+            if (check) {
+
+                if (i < squareCountRow) {
+                    ctx.fillRect((width - unitWidth) / 2, unitWidth * i, unitWidth, unitWidth);
+                } else if (i < squareCountRow * 2) {
+                    ctx.fillStyle = "rgb(240, 120, 40)";
+                    ctx.fillRect((width - unitWidth) / 2 + unitWidth,  unitWidth * (i - squareCountRow), unitWidth, unitWidth);
+                    ctx.fillRect((width - unitWidth) / 2 - unitWidth,  unitWidth * (i - squareCountRow), unitWidth, unitWidth);
+                } else if (i < squareCountRow * 3) {
+                    ctx.fillStyle = "rgb(120, 240, 40)";
+                    ctx.fillRect((width - unitWidth) / 2 + 2 * unitWidth,  unitWidth * (i - 2 * squareCountRow), unitWidth, unitWidth);
+                    ctx.fillRect((width - unitWidth) / 2 - 2 * unitWidth,  unitWidth * (i - 2 * squareCountRow), unitWidth, unitWidth);
+                }   
+                
+            }
             
         }
     }
